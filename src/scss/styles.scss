@@ -1,21 +1,11 @@
-@import "_variables";
+@import "_buttons";
 
-h2 {
-  color: $bg;
+a {
+  @extend %button;
+  text-decoration: none;
 }
 
-.box {
-  margin-top: 20px;
-  h2 {
-    color: blue;
-    &:hover {
-      color: red;
-    }
-  }
-  button {
-    color: red;
-  }
-  &:hover {
-    background-color: green;
-  }
+button {
+  @extend %button;
+  border: none;
 }
