@@ -1,3 +1,3 @@
 # SCSS-study
 
-SCSS-study
+Paint-Box
