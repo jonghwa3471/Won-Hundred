@@ -1,3 +1,3 @@
-# SCSS-study
+# Paint-Box
 
 Paint-Box
