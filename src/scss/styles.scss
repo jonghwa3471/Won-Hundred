@@ -16,11 +16,14 @@ a {
 
 body {
   font-family: "Caladea";
-  padding: 0px 140px;
   padding-top: 70px;
+  & > *:not(.footer) {
+    padding: 0px 140px;
+  }
 }
 
 header {
+  z-index: 1;
   position: fixed;
   width: 100%;
   height: 70px;
@@ -33,9 +36,9 @@ header {
   nav {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     ul {
+      width: 34%;
       display: flex;
       text-transform: uppercase;
       font-size: 12px;
@@ -45,13 +48,20 @@ header {
           margin-right: 60px;
         }
       }
+      &:nth-child(2) {
+        display: flex;
+        justify-content: center;
+      }
+      &:last-child {
+        display: flex;
+        justify-content: flex-end;
+      }
     }
   }
 }
 
 .hero {
   height: 100vh;
-  width: 100%;
   background-size: cover;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("https://cdn.shopify.com/s/files/1/0086/4865/4895/files/desktop-2_1920x1115_crop_center.jpg?v=1684417630");
@@ -60,6 +70,7 @@ header {
   align-items: center;
   justify-content: center;
   color: white;
+  margin: 0px $sideSpace;
   margin-bottom: 80px;
   h4 {
     @extend %miniTitle;
@@ -112,13 +123,22 @@ header {
         margin-bottom: 30px;
       }
       h3 {
-        font-size: 36px;
+        @extend %miniTitle;
+        font-size: 28px;
         text-align: center;
         margin-bottom: 50px;
+        font-weight: 300;
+        font-style: italic;
+        text-transform: none;
       }
       a {
         border: 1px solid black;
         padding: 20px 40px;
+        transition: all 0.3s linear;
+        &:hover {
+          background-color: #414141;
+          color: white;
+        }
       }
     }
   }
@@ -129,10 +149,12 @@ header {
 }
 
 .blog {
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 60vh);
   .blog__post {
+    background-color: $bg;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     &:nth-child(even) {
@@ -140,5 +162,76 @@ header {
         order: 1;
       }
     }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .post__content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .post__date {
+        @extend %miniTitle;
+        margin-bottom: 30px;
+      }
+      h4 {
+        @extend %miniTitle;
+        font-weight: 300;
+        text-transform: none;
+        font-size: 28px;
+        margin-bottom: 40px;
+      }
+    }
   }
+}
+
+.gallery {
+  margin-bottom: 80px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  .gallery__poster {
+    img {
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.3s linear;
+      &:hover {
+        opacity: 0.5;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.footer {
+  margin-top: 100px;
+  background-color: $bg;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 65px 0px;
+  .footer__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    @extend %miniTitle;
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+    ul > li {
+      margin-bottom: 15px;
+    }
+    .column__title {
+      margin-bottom: 50px;
+      opacity: 0.7;
+    }
+  }
+}
+
+.fa-arrow-right-long {
+  margin-left: 5px;
+}
+
+.fa-cart-shopping {
+  margin-left: 20px;
 }
