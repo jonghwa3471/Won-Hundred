@@ -1,1 +1,6 @@
-$bg: #af7732;
+@import "reset";
+@import "_variables";
+
+* {
+  box-sizing: border-box;
+}
