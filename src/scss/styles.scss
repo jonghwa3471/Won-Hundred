@@ -16,6 +16,7 @@ body {
 
 header {
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   height: 60px;
@@ -118,6 +119,12 @@ a {
   .gallery__item {
     background-size: cover;
     background-position: center;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    overflow: hidden;
+    &:hover {
+      filter: blur(40px);
+    }
     &:first-child {
       grid-column: span 2;
       background-image: url("https://tolv.dk/wp-content/uploads/2019/07/Cherry-Sofa-Lookbook-3-web@2x.jpg");
@@ -127,6 +134,36 @@ a {
     }
     &:nth-child(3) {
       background-image: url("https://tolv.dk/wp-content/uploads/2019/07/Inlay-Chair-Lookbook-61-web@2x.jpg");
+    }
+    &:nth-child(4) {
+      background-image: url("https://tolv.dk/wp-content/uploads/2019/07/Bourbon_1-web@2x.jpg");
+    }
+    &:nth-child(5) {
+      grid-column: span 2;
+      background-image: url("https://tolv.dk/wp-content/uploads/2019/07/Copal-3_MLF_1-web@2xv2.jpg");
+    }
+    &:nth-child(6) {
+      background-image: url("https://tolv.dk/wp-content/uploads/2019/07/Kitsune-1_pine931_1-web@2x.jpg");
+    }
+    &:nth-child(7) {
+      grid-column: span 2;
+      background-image: url("https://tolv.dk/wp-content/uploads/2019/07/Kile-Coffeetable-Lookbook-75-web@2x.jpg");
+    }
+    &:nth-child(8) {
+      background-image: url("https://tolv.dk/wp-content/uploads/2019/07/mooli-red_1-web@2x.jpg");
+    }
+    &:nth-child(9) {
+      background-image: url("https://tolv.dk/wp-content/uploads/2019/07/Com-Chair-Lookbook-74-web@2xv2.jpg");
+    }
+    &:nth-child(10) {
+      grid-column: span 2;
+      background-image: url("https://tolv.dk/wp-content/uploads/2019/07/th-Portobello-W-Sofa@2x.jpg");
+    }
+    &:nth-child(11) {
+      background-image: url("https://tolv.dk/wp-content/uploads/2019/07/th-Papa-Cushion-1@2x-1.jpg");
+    }
+    &:last-child {
+      background-image: url("https://tolv.dk/wp-content/uploads/2019/07/th-Neuf-ST@2x.jpg");
     }
   }
 }
